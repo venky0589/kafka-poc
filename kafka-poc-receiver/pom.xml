@@ -12,7 +12,7 @@
 	<groupId>com.letuslearn</groupId>
 	<artifactId>kafka-poc-receiver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafka-poc-producer</name>
+	<name>kafka-poc-receiver</name>
 	<description>Receiver for kafka poc project</description>
 
 	<properties>
