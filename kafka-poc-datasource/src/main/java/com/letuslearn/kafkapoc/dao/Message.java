@@ -38,7 +38,7 @@ public class Message {
 	private Long providerId;
 	
 	@Column
-	private String query;
+	private String table;
 	
 	@Column
 	private String action;

@@ -12,7 +12,7 @@ import com.letuslearn.kafkapoc.dao.Message;
 public interface MessageRepo extends JpaRepository<Message, Long>{
 
 
-	List<Message> findAllByDateCreatedLessThanEqual(Date createdDate);
+	List<Message> findAllByDateCreatedGreaterThanOrderByProviderIdAscTableAsc(Date createdDate);
 
 	
 

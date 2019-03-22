@@ -18,7 +18,7 @@ public class MessageDTO {
 
 	private Long providerId;
 
-	private String query;
+	private String table;
 
 	private String action;
 

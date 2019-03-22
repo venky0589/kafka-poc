@@ -34,10 +34,10 @@ public class KafkaPocProducerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Schema message = SchemaBuilder.record("Message").namespace("com.letuslearn.avro").fields()
-				.requiredString("query").requiredString("action").requiredLong("id").requiredLong("dateCreated").endRecord();
-		LOG.info(message.toString());
+		//Schema message = SchemaBuilder.record("Message").namespace("com.letuslearn.avro").fields()
+			//	.requiredString("query").requiredString("action").requiredLong("id").requiredLong("dateCreated").endRecord();
+		//LOG.info(message.toString());
 		
-		sender.publishToKafka(Message.newBuilder().setQuery("Select * from lllala").setProviderId(1L).setAction("INSERT").setDateCreated(1234568867).setId(20).build());
+		//sender.publishToKafka(Message.newBuilder().setTable(value)("Select * from lllala").setProviderId(1L).setAction("INSERT").setDateCreated(1234568867).setId(20).build());
 	}
 }

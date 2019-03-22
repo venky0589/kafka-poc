@@ -30,6 +30,7 @@ public class MessageService {
 		}else {
 			FailedMessage msg=FailedMessage.builder()
 			.action(message.getAction().toString())
+			.table(message.getTable().toString())
 			.dateCreated(new Date(message.getDateCreated()))
 			//.id(message.getId())
 			.providerId(message.getProviderId()).build();

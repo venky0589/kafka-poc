@@ -31,7 +31,7 @@ public class CronSchedularConfiguration {
 	@Autowired
 	private Sender sender;
 
-	@Scheduled(initialDelay = 1000, fixedRate = 10000)
+	@Scheduled(initialDelay = 1000, fixedRate = 60000)
 	public void run() {
 
 		logger.info("Current time is :: " + Calendar.getInstance().getTime());
@@ -51,7 +51,7 @@ public class CronSchedularConfiguration {
 		}
 		Date lastFetchedDate1 = null;
 		for (MessageDTO messageDTO : messageDTOs) {
-			logger.info(messageDTO.getQuery());
+			logger.info(messageDTO.getTable());
 			if (lastFetchedDate1 == null) {
 				lastFetchedDate1 = messageDTO.getDateCreated();
 			} else if (lastFetchedDate1.after(messageDTO.getDateCreated())) {
@@ -61,7 +61,7 @@ public class CronSchedularConfiguration {
 			sender.publishToKafka(Message.newBuilder().setAction(messageDTO.getAction())
 					.setDateCreated(messageDTO.getDateCreated().getTime()).setId(messageDTO.getId())
 					.setProviderId(messageDTO.getProviderId())
-					.setQuery(messageDTO.getQuery()).build());
+					.setTable(messageDTO.getTable()).build());
 
 		}
 
